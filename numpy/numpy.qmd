@@ -1,0 +1,222 @@
+---
+title: Numpy Intro
+format: html
+---
+
+```{python}
+import numpy as np
+import math
+```
+
+# Array Creation
+
+```{python}
+# Arrays are displayed as a list or list of lists and can be created through list as well. When creating an
+# array, we pass in a list as an argument in numpy array
+a = np.array([1, 2, 3])
+print(a)
+# Printing number of dimensions
+print(a.ndim)
+```
+
+```{python}
+# Creating a multi-dimensional array
+b = np.array([[1,2,3],[4,5,6]])
+b
+```
+
+```{python}
+# Print out length of each dimension by calling shape attribute
+b.shape
+```
+
+
+```{python}
+# We can check the type of items in the array
+b.dtype
+```
+
+```{python}
+# integers, floats are accepted in numpy arrays
+c = np.array([2.2, 5, 1.1])
+c.dtype.name
+```
+
+```{python}
+# The purpose of these is to create the shape of the array but don't care what is in them yet
+d = np.zeros((2,3))
+print(d)
+
+e = np.ones((2,3))
+print(e)
+```
+
+```{python}
+# Array with random numbers in it
+np.random.rand(2,3)
+```
+
+```{python}
+# Array of every even number from 10 (inclusive) to fifty (exclusive)
+f = np.arange(10, 50, 2)
+f
+```
+
+```{python}
+# Generate sequence of floats
+np.linspace( 0, 2, 15) # 15 numbers from 0 (inclusive) to 2 (inclusive)
+```
+
+# Array Operations
+```{python}
+farenheit = np.array([0, -10, -5, -15, 0])
+
+celcius = (farenheit - 31) * (5/9)
+celcius
+```
+
+
+```{python}
+celcius > -20
+```
+
+```{python}
+celcius%2 == 0
+```
+
+```{python}
+# Matrix manupulations
+A = np.array([[1,1], [0,1]])
+B = np.array([[2,0], [3,4]])
+print(A*B)
+
+# Matrix product
+print(A@B)
+```
+
+```{python}
+# Upcasting
+array1 = np.array([[1,2,3],[4,5,6]])
+print(array1.dtype)
+
+array2 = np.array([[7.1,8.2,9.1],[10.4,11.2,12.3]])
+print(array2.dtype)
+```
+
+```{python}
+array3=array1+array2
+print(array3)
+print(array3.dtype)
+```
+
+
+```{python}
+print(array3.sum())
+print(array3.max())
+print(array3.min())
+print(array3.mean())
+```
+
+```{python}
+b = np.arange(1,16,1).reshape(3,5)
+print(b)
+```
+
+# Indexing, Slicing and Iterating
+
+```{python}
+a = np.array([1,3,5,7])
+a[2]
+```
+
+
+```{python}
+a = np.array([[1,2], [3, 4], [5, 6]])
+```
+
+```{python}
+# Selecting elements inside a matrix (multidimentional array)
+a[1,1] # First integer is row, second is column
+```
+
+```{python}
+# Get multiple elements
+# Ex 1, 4, 6 and put them in a one-dimensional array
+# enter the indices directly into an array function
+np.array([a[0, 0], a[1, 1], a[2, 1]])
+```
+
+```{python}
+# zips the first list and the second list up
+print(a[[0, 1, 2], [0, 1, 1]])
+```
+# Boolean Indexing
+
+```{python}
+print(a > 5)
+print(a[a>5])
+```
+# Slicing
+
+```{python}
+a = np.array([0,1,2,3,4,5])
+print(a[:3])
+```
+
+```{python}
+print(a[2:4])
+```
+
+```{python}
+# Multi-dimensional arrays it works similarly
+a = np.array([[1,2,3,4], [5,6,7,8], [9,10,11,12]])
+a
+```
+```{python}
+a[:2]
+```
+```{python}
+# Add another argument to the array, a[:2, 1:3] we get first two rows but then the second and third column values only
+a[:2, 1:3]
+```
+
+```{python}
+# Sub array will change the original array value too!
+sub_array = a[:2, 1:3]
+print("sub arr index [0,0], before change", sub_array[0,0])
+sub_array[0,0] = 50
+print("sub arr index [0,0], after change", sub_array[0,0])
+print("original array [0,1] values after change", a[0,1])
+```
+# Numpy with Datasets
+
+```{python}
+# Popular dataset on wine quality, going to looks at red wines only.
+# fields include: fixed, acidity, volatile aciditycitric acid, residual sugar, chlorides, free sulfur dioxide
+# total sulfur dioxidedensite, pH, sulphates, alcohol, quality
+```
+```{python}
+# To load a dataset in Numpy, we can use the genfromtxt() function . We can specify data file name, delimiter, number
+wines = np.genfromtxt("winequality-red.csv", delimiter=",", skip_header=1)
+print(wines)
+```
+```{python}
+print("one integer 0 for slicing: ", wines[:, 0])
+# if we canted the same values but wanted to preserve that they sit in their own rows
+print("0 to 1 for slicing: \n", wines[:, 0:1])
+```
+```{python}
+# Values in a row from 0 to 3
+wines[:, 0:3]
+```
+```{python}
+# Non consecutive columns
+wines[:, [0,2,4]]
+```
+```{python}
+# Basic summarization of this dataset. For example, if we want to find out the average quality
+# we can select the quality column. We could do this in a couple of ways, but the most appropriate
+# is to use the -1 value for the index, as negative numbers slice from the back of the list.
+wines[:, -1].mean()
+```
+

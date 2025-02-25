@@ -1,0 +1,51 @@
+---
+title: Numpy exercises
+format: html
+---
+## Task 1 Create and Inscpect a NumPy Array
+* Create a 1D NumPy array containing integers from 1 to 10.
+* Print its type, shape, and data type.
+```{python}
+import numpy as np
+
+first_array = np.arange(1, 11)
+print(f"array type {type(first_array)}")
+print(f"shape {first_array.shape}")
+print(f"data type {first_array.dtype}")
+```
+
+## Task 2 Array Indexing and Slicing
+* Create an array of numbers from 10 to 100 (step of 10)
+* Extract the first three elements and last two elements
+```{python}
+second_array = np.arange(10, 101, 10)
+print("second_array", second_array)
+print("first three elements:", second_array[:3])
+print("last three elements:", second_array[-2:])
+```
+
+## Task 3 Reshaping an Array
+* Create an array of numbers from 1 to 9.
+* Reshape in into a 3x3 matrix.
+```{python}
+third_array = np.arange(1, 10).reshape(3,3)
+third_array
+```
+
+## Task 4 Basic Mathematical Operations
+* Create an array [2, 4, 6, 8, 10]
+* Multiply each element by 3
+```{python}
+fourth_array = np.arange(2,11,2) * 3
+fourth_array
+```
+
+## Task 5 Matrix Operations
+* Create two 2x2 matrices
+* Perform: Addition and Matrix Multiplication
+```{python}
+A = np.array([[1, 2], [3, 4]])
+B = np.array([[5, 6], [7, 8]])
+print("Addition \n", A + B)
+print("Multiplication \n", A * B)
+```

@@ -1,0 +1,22 @@
+---
+title: Showcase
+author: Ernestas Tamošiūnas
+format: html
+---
+
+```{python}
+import random
+
+size = 10
+print("Hello, world!")
+x = range(size)
+y = [random.randint(i * 5, 100) for i in range(size)]
+for i in y:
+	print(i)
+```
+
+```{python}
+import matplotlib.pyplot as plt
+fig, ax = plt.subplots()
+img = ax.plot(x, y)
+```

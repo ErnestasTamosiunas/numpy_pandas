@@ -1,0 +1,59 @@
+---
+title: Intro Notebook
+author: Ernestas Tamošiūnas
+format: html
+---
+
+```{python}
+print("Hello World!")
+```
+Below is how we calculate the number of seconds in a year
+```{python}
+365 * 24 * 60 * 60
+```
+
+```{python}
+_ / 1e6
+```
+Below is how we calculate the number of seconds in a leap year
+```{python}
+366 * 24 * 60 * 60
+```
+
+```{python}
+_ / 1e6
+```
+
+```{python}
+x = 4 + 3
+print(x)
+```
+# Hello
+## Hello
+### Hello
+#### Hello
+##### Hello
+###### Hello
+* One fish
+* Two fish
+* Red fish
+* Blue fish
+
+**bold**
+
+*italics*
+
+https://google.com
+
+$\int_0*\infty x^(-\alpha)$
+
+```{python}
+from matplotlib.pyplot import plot
+plot([0,1,0,1])
+```
+This is a plot using matplotlib of a vector.
+
+```{python}
+ls
+```
+

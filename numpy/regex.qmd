@@ -1,0 +1,160 @@
+---
+title: Regex for pattern matching
+format: html
+---
+# Regula expressions in Data Science
+* To check whether a pattern exists within some sources data
+* To get all instances of a complex pattern from some source data
+* To clean your source data using a pattern generally through string splitting:Q
+
+```{python}
+import re
+# Text example
+text = "This is a good day."
+if re.search("good", text):
+	print("Wonderful!")
+else:
+	print("Alas :(")
+```
+
+```{python}
+text = "Amy works diligently. Amy gets good grades. Our student Amy is succesful."
+re.split("Amy", text)
+```
+
+```{python}
+re.findall("Amy", text)
+```
+
+```{python}
+# Search
+text = "Amy works diligently. Amy gets good grades. Our student Amy is succesful."
+re.search("^Amy", text)
+```
+
+# Patterns and Character Classes
+```{python}
+grades="ACAAAAABCBCBAA"
+re.findall("B", grades)
+```
+
+```{python}
+re.findall("[AB]", grades)
+```
+
+```{python}
+re.findall("[A][B-C]", grades)
+```
+
+```{python}
+# ^ - caret is negating
+re.findall("[^A]", grades)
+```
+
+```{python}
+re.findall("A{2,10}", grades)
+```
+
+```{python}
+re.findall("A{1,1}A{1,1}", grades)
+```
+
+```{python}
+re.findall("A{1,1}A{1,1}", grades)
+```
+
+```{python}
+re.findall("AA", grades)
+```
+
+```{python}
+re.findall("A{2}", grades)
+```
+
+```{python}
+re.findall("A{1,10}B{1,10}C{1,10}", grades)
+```
+
+```{python}
+with open("ferpa.txt", "r") as file:
+	wiki = file.read()
+wiki
+```
+
+```{python}
+re.findall(r"[a-zA-Z]{1,100}\[edit\]", wiki)
+```
+
+```{python}
+re.findall(r"[\w]{1,100}\[edit\]", wiki)
+```
+
+```{python}
+re.findall(r"[\w ]*\[edit\]", wiki)
+```
+
+```{python}
+for title in re.findall(r"[\w ]*\[edit\]", wiki):
+	print(re.split(r"[\[]", title[0]))
+```
+
+# Groups
+
+```{python}
+re.findall(r"([\w ]*)(\[edit\])", wiki)
+```
+
+```{python}
+for item in re.finditer(r"([\w ]*)(\[edit\])", wiki):
+	print(item.groups())
+```
+
+```{python}
+for item in re.finditer(r"([\w ]*)(\[edit\])", wiki):
+	print(item.group(1))
+```
+
+```{python}
+for item in re.finditer(r"(?P<title>[\w ]*)(?P<edit_link>\[edit\])", wiki):
+	print(item.groupdict())
+```
+
+```{python}
+for item in re.finditer(r"(?P<title>[\w ]+)(?=\[edit\])", wiki):
+	print(item)
+```
+
+```{python}
+with open("buddhist.txt", "r") as file:
+	wiki = file.read()
+wiki
+```
+```{python}
+# Verbose regex
+pattern=r"""
+(?P<title>.*)		# The university title
+(-\ localted\ in\ ) # An indicator of the location
+(?P<city>\w*)		# city of the university is in
+(,\ )				# seperator for the state
+(?P<state>\w*)		# the state the city is located in
+"""
+
+for item in re.finditer(pattern,wiki,re.VERBOSE):
+	print(item.groupdict())
+```
+
+
+```{python}
+patter = r"#[\w\d]*(?=\s)"
+```
+```{python}
+import numpy as np
+np.any((np.arange(10) > 4) & (np.arange(0, 20, 2) < 10))
+```
+```{python}
+ones = np.ones(10)
+ones
+```
+```{python}
+np.count_nonzero(ones)
+```
