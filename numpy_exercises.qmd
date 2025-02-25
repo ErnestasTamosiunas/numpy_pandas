@@ -49,3 +49,46 @@ B = np.array([[5, 6], [7, 8]])
 print("Addition \n", A + B)
 print("Multiplication \n", A * B)
 ```
+
+## Task 6 Generate Random Numbers
+* Generate a 4x4 matrix of random integers between 10 and 50.
+```{python}
+four_by_four_matrix = np.random.randint(10, 51, size=(4,4))
+print("rand.int:\n", four_by_four_matrix)
+```
+
+## Task 7 Finding Min, Max, Mean, and Standard Deviation
+* Create an array of 15 random numbers between 1 and 100
+* Find the minimum, maximum, mean and standard deviation.
+```{python}
+fifth_array = np.random.randint(1, 101, size=(15))
+print("Size =>", fifth_array.size)
+print("Min =>", np.min(fifth_array))
+print("Max =>", np.max(fifth_array))
+print("Mean =>", np.mean(fifth_array))
+print("Standard deviation =>", np.std(fifth_array))
+```
+
+## Task 8 Boolean Masking
+* Create an array [5, 12, 17, 24, 29, 36, 42, 55].
+* Extract elementas greater than 20.
+```{python}
+sixth_array = np.array([5, 12, 17, 24, 29, 36, 42, 55])
+extracted_numbers = sixth_array[sixth_array > 20]
+print("Numbers greater than 20 =>\n", extracted_numbers)
+extracted_booleans = sixth_array > 20
+print("Boolean if greater than 20 =>\n", extracted_booleans)
+```
+
+## Task 9 Normalizing Data 
+* Normalize an array (values scaled between 0 and 1)
+```{python}
+# The normalization formula is a statistics formula that can transform a data set so that all of its variations
+# fall between zero and one. This makes it easier to understand, compare and showcase the data
+# that have quite a different range sizes.
+x_arr = np.array([20, 50, 80, 110, 140])
+x_min = np.min(x_arr)
+x_max = np.max(x_arr)
+normalized = (x_arr - x_min) / (x_max - x_min)
+normalized
+```

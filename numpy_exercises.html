@@ -102,7 +102,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Create a 1D NumPy array containing integers from 1 to 10.</li>
 <li>Print its type, shape, and data type.</li>
 </ul>
-<div id="a9cfc607" class="cell" data-execution_count="1">
+<div id="57e50a0b" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>first_array <span class="op">=</span> np.arange(<span class="dv">1</span>, <span class="dv">11</span>)</span>
@@ -122,7 +122,7 @@ data type int64</code></pre>
 <li>Create an array of numbers from 10 to 100 (step of 10)</li>
 <li>Extract the first three elements and last two elements</li>
 </ul>
-<div id="1c2c7547" class="cell" data-execution_count="2">
+<div id="b847cf69" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>second_array <span class="op">=</span> np.arange(<span class="dv">10</span>, <span class="dv">101</span>, <span class="dv">10</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"second_array"</span>, second_array)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"first three elements:"</span>, second_array[:<span class="dv">3</span>])</span>
@@ -140,7 +140,7 @@ last three elements: [ 90 100]</code></pre>
 <li>Create an array of numbers from 1 to 9.</li>
 <li>Reshape in into a 3x3 matrix.</li>
 </ul>
-<div id="27c3eedc" class="cell" data-execution_count="3">
+<div id="98bb6607" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>third_array <span class="op">=</span> np.arange(<span class="dv">1</span>, <span class="dv">10</span>).reshape(<span class="dv">3</span>,<span class="dv">3</span>)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>third_array</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
@@ -156,7 +156,7 @@ last three elements: [ 90 100]</code></pre>
 <li>Create an array [2, 4, 6, 8, 10]</li>
 <li>Multiply each element by 3</li>
 </ul>
-<div id="1a94deb3" class="cell" data-execution_count="4">
+<div id="91cda374" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>fourth_array <span class="op">=</span> np.arange(<span class="dv">2</span>,<span class="dv">11</span>,<span class="dv">2</span>) <span class="op">*</span> <span class="dv">3</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>fourth_array</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
@@ -170,7 +170,7 @@ last three elements: [ 90 100]</code></pre>
 <li>Create two 2x2 matrices</li>
 <li>Perform: Addition and Matrix Multiplication</li>
 </ul>
-<div id="a5aa5064" class="cell" data-execution_count="5">
+<div id="47c3756d" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">3</span>, <span class="dv">4</span>]])</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>B <span class="op">=</span> np.array([[<span class="dv">5</span>, <span class="dv">6</span>], [<span class="dv">7</span>, <span class="dv">8</span>]])</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Addition </span><span class="ch">\n</span><span class="st">"</span>, A <span class="op">+</span> B)</span>
@@ -183,6 +183,93 @@ Multiplication
  [[ 5 12]
  [21 32]]</code></pre>
 </div>
+</div>
+</section>
+<section id="task-6-generate-random-numbers" class="level2">
+<h2 class="anchored" data-anchor-id="task-6-generate-random-numbers">Task 6 Generate Random Numbers</h2>
+<ul>
+<li>Generate a 4x4 matrix of random integers between 10 and 50.</li>
+</ul>
+<div id="63e85a50" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>four_by_four_matrix <span class="op">=</span> np.random.randint(<span class="dv">10</span>, <span class="dv">51</span>, size<span class="op">=</span>(<span class="dv">4</span>,<span class="dv">4</span>))</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"rand.int:</span><span class="ch">\n</span><span class="st">"</span>, four_by_four_matrix)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>rand.int:
+ [[42 42 29 11]
+ [49 46 45 46]
+ [11 40 23 31]
+ [36 49 31 24]]</code></pre>
+</div>
+</div>
+</section>
+<section id="task-7-finding-min-max-mean-and-standard-deviation" class="level2">
+<h2 class="anchored" data-anchor-id="task-7-finding-min-max-mean-and-standard-deviation">Task 7 Finding Min, Max, Mean, and Standard Deviation</h2>
+<ul>
+<li>Create an array of 15 random numbers between 1 and 100</li>
+<li>Find the minimum, maximum, mean and standard deviation.</li>
+</ul>
+<div id="1e4c576d" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>fifth_array <span class="op">=</span> np.random.randint(<span class="dv">1</span>, <span class="dv">101</span>, size<span class="op">=</span>(<span class="dv">15</span>))</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Size =&gt;"</span>, fifth_array.size)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Min =&gt;"</span>, np.<span class="bu">min</span>(fifth_array))</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Max =&gt;"</span>, np.<span class="bu">max</span>(fifth_array))</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Mean =&gt;"</span>, np.mean(fifth_array))</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Standard deviation =&gt;"</span>, np.std(fifth_array))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Size =&gt; 15
+Min =&gt; 6
+Max =&gt; 97
+Mean =&gt; 52.13333333333333
+Standard deviation =&gt; 29.307261140467485</code></pre>
+</div>
+</div>
+</section>
+<section id="task-8-boolean-masking" class="level2">
+<h2 class="anchored" data-anchor-id="task-8-boolean-masking">Task 8 Boolean Masking</h2>
+<ul>
+<li>Create an array [5, 12, 17, 24, 29, 36, 42, 55].</li>
+<li>Extract elementas greater than 20.</li>
+</ul>
+<div id="1379e3c2" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>sixth_array <span class="op">=</span> np.array([<span class="dv">5</span>, <span class="dv">12</span>, <span class="dv">17</span>, <span class="dv">24</span>, <span class="dv">29</span>, <span class="dv">36</span>, <span class="dv">42</span>, <span class="dv">55</span>])</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>extracted_numbers <span class="op">=</span> sixth_array[sixth_array <span class="op">&gt;</span> <span class="dv">20</span>]</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Numbers greater than 20 =&gt;</span><span class="ch">\n</span><span class="st">"</span>, extracted_numbers)</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>extracted_booleans <span class="op">=</span> sixth_array <span class="op">&gt;</span> <span class="dv">20</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Boolean if greater than 20 =&gt;</span><span class="ch">\n</span><span class="st">"</span>, extracted_booleans)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Numbers greater than 20 =&gt;
+ [24 29 36 42 55]
+Boolean if greater than 20 =&gt;
+ [False False False  True  True  True  True  True]</code></pre>
+</div>
+</div>
+</section>
+<section id="task-9-normalizing-data" class="level2">
+<h2 class="anchored" data-anchor-id="task-9-normalizing-data">Task 9 Normalizing Data</h2>
+<ul>
+<li>Normalize an array (values scaled between 0 and 1)</li>
+</ul>
+<div id="81428d10" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The normalization formula is a statistics formula that can transform a data set so that all of its variations</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="co"># fall between zero and one. This makes it easier to understand, compare and showcase the data</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co"># that have quite a different range sizes.</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>x_arr <span class="op">=</span> np.array([<span class="dv">20</span>, <span class="dv">50</span>, <span class="dv">80</span>, <span class="dv">110</span>, <span class="dv">140</span>])</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>x_min <span class="op">=</span> np.<span class="bu">min</span>(x_arr)</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>x_max <span class="op">=</span> np.<span class="bu">max</span>(x_arr)</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>normalized <span class="op">=</span> (x_arr <span class="op">-</span> x_min) <span class="op">/</span> (x_max <span class="op">-</span> x_min)</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>normalized</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="9">
+<pre><code>array([0.  , 0.25, 0.5 , 0.75, 1.  ])</code></pre>
+</div>
+</div>
+</section>
+<section id="task-10-eigenvalues-and-eigenvectors" class="level2">
+<h2 class="anchored" data-anchor-id="task-10-eigenvalues-and-eigenvectors">Task 10 Eigenvalues and Eigenvectors</h2>
+<ul>
+<li>Compute eigenvalues and eigenvectors of this matrix: A = np.array([[3, -2], [1, 0]])</li>
+</ul>
+<div id="55bacbf2" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>a_arr <span class="op">=</span> np.array([[<span class="dv">3</span>, <span class="op">-</span><span class="dv">2</span>], [<span class="dv">1</span>, <span class="dv">0</span>]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 

@@ -1,0 +1,227 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "title: Numpy exercises\n",
+        "format: html\n",
+        "---\n",
+        "\n",
+        "## Task 1 Create and Inscpect a NumPy Array\n",
+        "* Create a 1D NumPy array containing integers from 1 to 10.\n",
+        "* Print its type, shape, and data type."
+      ],
+      "id": "0336245c"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "import numpy as np\n",
+        "\n",
+        "first_array = np.arange(1, 11)\n",
+        "print(f\"array type {type(first_array)}\")\n",
+        "print(f\"shape {first_array.shape}\")\n",
+        "print(f\"data type {first_array.dtype}\")"
+      ],
+      "id": "6ce6e8bb",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## Task 2 Array Indexing and Slicing\n",
+        "* Create an array of numbers from 10 to 100 (step of 10)\n",
+        "* Extract the first three elements and last two elements"
+      ],
+      "id": "de6000f5"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "second_array = np.arange(10, 101, 10)\n",
+        "print(\"second_array\", second_array)\n",
+        "print(\"first three elements:\", second_array[:3])\n",
+        "print(\"last three elements:\", second_array[-2:])"
+      ],
+      "id": "9882fd03",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## Task 3 Reshaping an Array\n",
+        "* Create an array of numbers from 1 to 9.\n",
+        "* Reshape in into a 3x3 matrix."
+      ],
+      "id": "9289110d"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "third_array = np.arange(1, 10).reshape(3,3)\n",
+        "third_array"
+      ],
+      "id": "727adca0",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## Task 4 Basic Mathematical Operations\n",
+        "* Create an array [2, 4, 6, 8, 10]\n",
+        "* Multiply each element by 3"
+      ],
+      "id": "e477454a"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "fourth_array = np.arange(2,11,2) * 3\n",
+        "fourth_array"
+      ],
+      "id": "0138a3dc",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## Task 5 Matrix Operations\n",
+        "* Create two 2x2 matrices\n",
+        "* Perform: Addition and Matrix Multiplication"
+      ],
+      "id": "39fffe74"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "A = np.array([[1, 2], [3, 4]])\n",
+        "B = np.array([[5, 6], [7, 8]])\n",
+        "print(\"Addition \\n\", A + B)\n",
+        "print(\"Multiplication \\n\", A * B)"
+      ],
+      "id": "b5fe0b7a",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## Task 6 Generate Random Numbers\n",
+        "* Generate a 4x4 matrix of random integers between 10 and 50."
+      ],
+      "id": "9c87ddea"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "four_by_four_matrix = np.random.randint(10, 51, size=(4,4))\n",
+        "print(\"rand.int:\\n\", four_by_four_matrix)"
+      ],
+      "id": "919d327e",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## Task 7 Finding Min, Max, Mean, and Standard Deviation\n",
+        "* Create an array of 15 random numbers between 1 and 100\n",
+        "* Find the minimum, maximum, mean and standard deviation."
+      ],
+      "id": "422b9bee"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "fifth_array = np.random.randint(1, 101, size=(15))\n",
+        "print(\"Size =>\", fifth_array.size)\n",
+        "print(\"Min =>\", np.min(fifth_array))\n",
+        "print(\"Max =>\", np.max(fifth_array))\n",
+        "print(\"Mean =>\", np.mean(fifth_array))\n",
+        "print(\"Standard deviation =>\", np.std(fifth_array))"
+      ],
+      "id": "585f4a0b",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## Task 8 Boolean Masking\n",
+        "* Create an array [5, 12, 17, 24, 29, 36, 42, 55].\n",
+        "* Extract elementas greater than 20."
+      ],
+      "id": "b2e0c7c4"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "sixth_array = np.array([5, 12, 17, 24, 29, 36, 42, 55])\n",
+        "extracted_numbers = sixth_array[sixth_array > 20]\n",
+        "print(\"Numbers greater than 20 =>\\n\", extracted_numbers)\n",
+        "extracted_booleans = sixth_array > 20\n",
+        "print(\"Boolean if greater than 20 =>\\n\", extracted_booleans)"
+      ],
+      "id": "194d0eef",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## Task 9 Normalizing Data \n",
+        "* Normalize an array (values scaled between 0 and 1)"
+      ],
+      "id": "cb6a21a7"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# The normalization formula is a statistics formula that can transform a data set so that all of its variations\n",
+        "# fall between zero and one. This makes it easier to understand, compare and showcase the data\n",
+        "# that have quite a different range sizes.\n",
+        "x_arr = np.array([20, 50, 80, 110, 140])\n",
+        "x_min = np.min(x_arr)\n",
+        "x_max = np.max(x_arr)\n",
+        "normalized = (x_arr - x_min) / (x_max - x_min)\n",
+        "normalized"
+      ],
+      "id": "c020ceee",
+      "execution_count": null,
+      "outputs": []
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "name": "neovim",
+      "language": "python",
+      "display_name": "neovim",
+      "path": "/Users/ernestastamo/Library/Jupyter/kernels/neovim"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}
